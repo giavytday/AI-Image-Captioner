@@ -1,5 +1,5 @@
 # AI-Powered Image Captioning Suite
-<img width="815" height="516" alt="Screenshot 2026-04-27 at 7 42 41 PM" src="https://github.com/user-attachments/assets/23dd0b83-122d-4a90-adaf-a3514d3974b3" />
+
 
 An automated toolset leveraging Generative AI to convert visual content into descriptive text. This project addresses real-world challenges in web accessibility (Alt-text) and Search Engine Optimization (SEO) for high-volume digital publishers.
 
@@ -40,6 +40,7 @@ Installation and Usage
 - The project is configured for IBM Code Engine. To rebuild and redeploy:
 - ibmcloud ce buildrun submit --name buildrun-v9 --build build-ai-captioner --source .
 - ibmcloud ce application update --name ai-captioner-app
+<img width="839" height="286" alt="Screenshot 2026-04-28 at 12 54 09 AM" src="https://github.com/user-attachments/assets/9ceffb82-3d23-4b3a-b204-42a12f869b58" />
 
 Repository & Live App
 GitHub: https://github.com/giavytday/AI-Image-Captioner
