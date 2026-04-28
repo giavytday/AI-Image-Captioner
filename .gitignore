@@ -1,0 +1,4 @@
+my_env/
+captions.txt
+__pycache__/
+.DS_Store
