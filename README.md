@@ -4,30 +4,43 @@
 An automated toolset leveraging Generative AI to convert visual content into descriptive text. This project addresses real-world challenges in web accessibility (Alt-text) and Search Engine Optimization (SEO) for high-volume digital publishers.
 
 Project Overview
-This suite transforms visual data into machine-readable language using state-of-the-art Image Captioning models. By implementing Salesforce's BLIP architecture, the project provides automated solutions for:
+This suite transforms visual data into machine-readable language using state-of-the-art Image Captioning models. By implementing Salesforce's BLIP (Bootstrapping Language-Image Pre-training) architecture, the project provides automated solutions for:
 - Accessibility: Improving digital inclusion for visually impaired users.
-- SEO & Discovery: Enhancing image indexability for search engines and internal databases.
+- SEO & Discovery: Enhancing image indexability for search engines.
 - Operational Efficiency: Reducing manual overhead for high-volume content creators.
 
 Technical Accomplishments
-- Model Integration: Implemented BLIP and BLIP-2 models via the Hugging Face Transformers library.
-- Interface Design: Developed a real-time web application using Gradio for seamless user interaction.
-- Data Engineering: Built custom pipelines for both web-scraped URL processing and local batch image processing.
+- Cloud-Native Deployment: Successfully containerized and deployed the application using IBM Cloud Code Engine, providing a public, scalable URL for global access.
+- Model Integration: Implemented the Salesforce/blip-image-captioning-base model via the Hugging Face Transformers library.
+- Resource Optimization: Engineered a memory-efficient build process by utilizing CPU-only PyTorch builds, significantly reducing the container image size and ensuring compatibility with cloud-based ephemeral storage.
+- Interface Design: Developed a real-time web application using Gradio for seamless user interaction and model testing.
+- Automated Pipelines: Built a web-scraped URL processing tool using BeautifulSoup to extract and caption images from live websites.
 
 Core Features
-- Web Scraper & Captioner: Utilizes BeautifulSoup to extract and caption images from live URLs, generating structured reports.
-- Batch Processor: Automates the captioning of local image directories using high-performance BLIP-2 models.
-- Interactive Web UI: Provides an intuitive interface for single-image uploads and real-time caption generation.
+- Interactive Web UI: A live interface for single-image uploads and real-time caption generation.
+- Web Scraper & Captioner: Utilizes BeautifulSoup to extract and caption images from live URLs, generating structured descriptive reports.
+- Containerized Environment: Fully defined Dockerfile and requirements.txt optimized for cloud deployment (IBM Code Engine/Docker).
 
 Tech Stack
-- AI/ML: Salesforce BLIP & BLIP-2, Hugging Face Transformers, PyTorch
+- AI/ML: Salesforce BLIP, Hugging Face Transformers, PyTorch (CPU-optimized)
 - Web: Gradio, BeautifulSoup4, Requests
+- Cloud: IBM Cloud Code Engine, IBM Cloud Container Registry
 - Processing: PIL (Pillow), NumPy
+- DevOps: Git, Docker
 
 Installation and Usage
-1. Install Dependencies
-pip install transformers pillow gradio beautifulsoup4 requests torch
+1. Local Setup
+- pip install -r requirements.txt
+
 2. Execution
 - Web Application: python3 image_captioning_app.py
-- URL Scraper: Configure automate_url_captioner.py and run.
-- Local Batch: python3 blip2_image_cap_local.py
+- URL Scraper: python3 automate_url_captioner.py
+
+3. Cloud Deployment (IBM Code Engine)
+- The project is configured for IBM Code Engine. To rebuild and redeploy:
+- ibmcloud ce buildrun submit --name buildrun-v9 --build build-ai-captioner --source .
+- ibmcloud ce application update --name ai-captioner-app
+
+Repository & Live App
+GitHub: https://github.com/giavytday/AI-Image-Captioner
+Live URL: https://ai-captioner-app.297ozx12fq46.us-south.codeengine.appdomain.cloud
