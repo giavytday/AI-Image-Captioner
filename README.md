@@ -1,5 +1,5 @@
 # AI-Powered Image Captioning Suite
-
+<img width="1027" height="605" alt="Screenshot 2026-04-28 at 1 09 50 AM" src="https://github.com/user-attachments/assets/6ec269e5-8d30-490e-9121-73ced48fbf6f" />
 
 An automated toolset leveraging Generative AI to convert visual content into descriptive text. This project addresses real-world challenges in web accessibility (Alt-text) and Search Engine Optimization (SEO) for high-volume digital publishers.
 
